@@ -17,7 +17,8 @@ class SimpleBackgroundService : Service() {
             Log.e("BackgroundService", "Service is running...")
             try {
                 Thread.sleep(5000)
-                Log.e("BackgroundService", "task completed!")
+                //To destroy the service
+                stopSelf()
             } catch (e: InterruptedException) {
                 e.printStackTrace()
             }
@@ -25,6 +26,10 @@ class SimpleBackgroundService : Service() {
         return super.onStartCommand(intent, flags, startId)
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.e("BackgroundService", "task completed!")
+    }
     override fun onBind(p0: Intent?): IBinder? {
         return null
     }

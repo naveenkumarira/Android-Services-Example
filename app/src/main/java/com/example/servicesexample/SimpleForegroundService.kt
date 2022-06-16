@@ -18,8 +18,8 @@ class SimpleForegroundService : Service() {
             Log.e("ForegroundService", "Service is running...")
             try {
                 Thread.sleep(5000)
+                //To destroy the service
                 stopSelf()
-                Log.e("ForegroundService", "Foreground Service completed.")
             } catch (e: InterruptedException) {
                 e.printStackTrace()
             }
@@ -52,5 +52,10 @@ class SimpleForegroundService : Service() {
 
     override fun onBind(p0: Intent?): IBinder? {
         return null
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.e("ForegroundService", "Foreground Service completed.")
     }
 }
