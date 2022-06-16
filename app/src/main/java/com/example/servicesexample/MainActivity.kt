@@ -15,12 +15,12 @@ class MainActivity : AppCompatActivity() {
 
         binding.backgroundServiceButton.setOnClickListener {
             //Launch Background services
-            startService(Intent(this, SimpleService::class.java))
+            startService(Intent(this, SimpleBackgroundService::class.java))
         }
         binding.foregroundServiceButton.setOnClickListener {
             //Launch Foreground services
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                startForegroundService(Intent(this, ForegroundService::class.java))
+                startForegroundService(Intent(this, SimpleForegroundService::class.java))
             }
         }
     }

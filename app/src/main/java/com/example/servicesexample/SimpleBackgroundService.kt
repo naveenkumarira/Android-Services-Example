@@ -6,7 +6,7 @@ import android.os.IBinder
 import android.util.Log
 
 
-class SimpleService : Service() {
+class SimpleBackgroundService : Service() {
 
     /**
      *The onStartCommand() method is called every time we start the service either by calling startService() or startForegroundService().
@@ -14,10 +14,10 @@ class SimpleService : Service() {
      */
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         Thread {
-            Log.e("Service", "Service is running...")
+            Log.e("BackgroundService", "Service is running...")
             try {
                 Thread.sleep(5000)
-                Log.e("Service", "task completed!")
+                Log.e("BackgroundService", "task completed!")
             } catch (e: InterruptedException) {
                 e.printStackTrace()
             }

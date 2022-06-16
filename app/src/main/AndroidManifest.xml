@@ -11,8 +11,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ServicesExample">
 
-        <service android:name=".SimpleService" />
-        <service android:name=".ForegroundService" />
+        <service android:name=".SimpleBackgroundService" />
+        <service android:name=".SimpleForegroundService" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
