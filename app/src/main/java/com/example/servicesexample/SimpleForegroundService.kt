@@ -27,13 +27,14 @@ class SimpleForegroundService : Service() {
 
         // Create the Notification
         val CHANNELID = "Foreground Service ID"
-        val notification: Notification.Builder = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            val channel = NotificationChannel(
+        val notification: Notification.Builder = 
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val notificationChannel = NotificationChannel(
                 CHANNELID,
                 CHANNELID,
                 NotificationManager.IMPORTANCE_LOW
             )
-            getSystemService(NotificationManager::class.java).createNotificationChannel(channel)
+            getSystemService(NotificationManager::class.java).createNotificationChannel(notificationChannel)
             Notification.Builder(this, CHANNELID)
         } else {
             Notification.Builder(this)
