@@ -6,7 +6,7 @@ import android.os.IBinder
 import android.util.Log
 
 
-class SimpleBackgroundService : Service() {
+class SimpleBackgroundService : Service() { }
 
     /**
      *The onStartCommand() method is called every time we start the service either by calling startService() or startForegroundService().
