@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.servicesexample">
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    package="com.example.servicesexample" >
 
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <application>
         ....
-        <service android:name=".SimpleBackgroundService" />
-        .....
+        <service android:name=".SimpleForegroundService" />
     </application>
 
 </manifest>
