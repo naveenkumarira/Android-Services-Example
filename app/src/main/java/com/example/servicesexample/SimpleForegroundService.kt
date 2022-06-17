@@ -39,15 +39,22 @@ class SimpleForegroundService : Service() {
         } else {
             Notification.Builder(this)
         }
+        // Create notification using notification builder
+        val notificationBuilder: Notification.Builder = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            Notification.Builder(this, CHANNELID)
+        } else {
+            Notification.Builder(this)
+        }
 
-        notification.apply {
+        // Set the notification content (Title, Description, Icon)
+        notificationBuilder.apply {
             setContentText("Foreground Service is running")
             setContentTitle("Foreground Service enabled")
             setSmallIcon(R.drawable.ic_lock_idle_alarm)
         }
 
         // Start the Foreground service with Notification. Notification is mandatory for Foreground services
-        startForeground(1001, notification.build())
+        startForeground(1001, notificationBuilder.build())
         return super.onStartCommand(intent, flags, startId)
     }
 
