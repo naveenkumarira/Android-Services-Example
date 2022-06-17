@@ -11,7 +11,7 @@ import android.os.IBinder
 import android.util.Log
 
 
-class SimpleForegroundService : Service() {
+class SimpleForegroundService : Service() { }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         Thread {
