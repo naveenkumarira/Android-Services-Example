@@ -13,6 +13,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
+        //Added a new line
         binding.backgroundServiceButton.setOnClickListener {
             //Launch Background services
             startService(Intent(this, SimpleBackgroundService::class.java))
