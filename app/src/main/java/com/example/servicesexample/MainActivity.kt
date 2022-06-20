@@ -13,6 +13,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
+        //Master branch change has been made and merged by someother developer
         binding.backgroundServiceButton.setOnClickListener {
             //Launch Background services
             startService(Intent(this, SimpleBackgroundService::class.java))
